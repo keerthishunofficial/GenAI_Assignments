@@ -1,0 +1,26 @@
+# Environment / Secrets — NEVER commit the real key
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Generated artifacts (re-created on each run)
+prompt_library.ipynb
+evaluation_report.md
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
