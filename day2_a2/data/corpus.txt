@@ -1,0 +1,20 @@
+Acme Research — Company & Product Overview
+
+Acme Research was founded in 2012 and is headquartered in Seattle, WA. The company focuses on vector search, embedding services, and retrieval systems for enterprise applications.
+
+Product: AcmeVector
+- Main features: real-time embeddings API, batch ingestion tools, vector index (ANN) with configurable distance metrics, built-in metadata support, and a lightweight CLI for ingestion.
+- Models: AcmeVector provides embedding models with names like "acme-embed-small" and "acme-embed-large".
+- Rate limits: the ingestion API accepts up to 100 requests per minute per API key for embedding calls. Batch ingestion endpoints support larger payloads but are subject to quota and should be rate-limited by the client.
+- Recommended chunk size: 600–800 characters per chunk (roughly 100–150 words) to balance context and embedding quality.
+- Best practices for ingestion: deduplicate content first, chunk documents into recommended sizes, add metadata (source, doc_id, position), and prefer batch endpoints for large imports.
+- Low-latency retrieval recommendations: keep an in-memory ANN index close to your application, pre-warm commonly used vectors, and use top-k retrieval with k between 3 and 10.
+- Data retention: Acme Research retains embedding payloads for 30 days for debugging and then purges them unless the customer opts into storage; check your agreement for long-term storage options.
+- CLI: Acme provides a CLI named `acmectl` that supports `acmectl ingest --file ...` and `acmectl status` for checking ingestion jobs. The CLI uses API key from environment variable ACME_API_KEY.
+- Python integration snippet:
+  1) pip install acmeclient
+  2) from acmeclient import AcmeClient; client = AcmeClient(api_key=...)
+  3) client.embed("text") -> returns vector
+  4) client.index.upsert([...]) for adding vectors
+
+Contact & docs: developer.acme.example/docs

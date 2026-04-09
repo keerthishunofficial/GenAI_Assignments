@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Debugger & Improver</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">Prompt<span>Genie</span></div>
+            <h1>Debug & Optimize Your AI Prompts</h1>
+            <p class="subtitle">Transform weak prompts into high-performance instructions using Groq Llama 3.</p>
+        </header>
+
+        <section class="input-section">
+            <div class="section-header">
+                <h2>Step 1: Input Weak Prompts</h2>
+                <div class="upload-btn-wrapper">
+                    <button class="btn btn-secondary">Upload Text File</button>
+                    <input type="file" id="fileUpload" accept=".txt">
+                </div>
+            </div>
+            
+            <div id="promptInputs" class="prompt-grid">
+                <!-- 5 textareas will be here -->
+                <div class="input-card">
+                    <label>Prompt #1</label>
+                    <textarea placeholder="e.g., Tell me about AI..." rows="4"></textarea>
+                </div>
+                <div class="input-card">
+                    <label>Prompt #2</label>
+                    <textarea placeholder="e.g., Write a marketing email..." rows="4"></textarea>
+                </div>
+                <div class="input-card">
+                    <label>Prompt #3</label>
+                    <textarea placeholder="e.g., Explain code..." rows="4"></textarea>
+                </div>
+                <div class="input-card">
+                    <label>Prompt #4</label>
+                    <textarea placeholder="e.g., Summarize this text..." rows="4"></textarea>
+                </div>
+                <div class="input-card">
+                    <label>Prompt #5</label>
+                    <textarea placeholder="e.g., Generate a diet plan..." rows="4"></textarea>
+                </div>
+            </div>
+
+            <button id="analyzeBtn" class="btn btn-primary btn-large">
+                <span class="btn-text">Improve Prompts</span>
+                <span class="spinner hidden"></span>
+            </button>
+        </section>
+
+        <section id="resultsSection" class="results-section hidden">
+            <div class="section-header">
+                <h2>Step 2: Compare & Evaluate</h2>
+                <button id="downloadBtn" class="btn btn-success">
+                    Download Evaluation Report (.md)
+                </button>
+            </div>
+            <div id="resultsGrid" class="results-grid"></div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
