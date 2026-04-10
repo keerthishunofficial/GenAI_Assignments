@@ -1,0 +1,8 @@
+node_modules
+.next
+temp_git_repo
+.git
+__pycache__
+.package-lock.json
+.package.json
+package-lock.json

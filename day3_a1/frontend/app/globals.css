@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0c;
+  --foreground: #f0f0f2;
+  --primary: #3b82f6;
+  --secondary: #6366f1;
+  --accent: #8b5cf6;
+  --muted: #1e1e24;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+}
+
+.glass {
+  background: rgba(30, 30, 36, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.step-active {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.step-inactive {
+  color: var(--foreground);
+  opacity: 0.5;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+.pulse-primary {
+  position: relative;
+}
+
+.pulse-primary::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  animation: pulse-ring 2s infinite;
+}
